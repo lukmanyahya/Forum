@@ -1,0 +1,177 @@
+/* Login styles */
+.login {   
+  background: white;
+  color: var(--amikom-purple);
+  border-radius: 25px;
+  padding: 60px
+}
+
+.login .card {
+  border: 3px solid var(--amikom-purple);
+  border-radius: 20px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+.login .card img {
+  width: 100px;
+  border: 4px solid white;
+  border-radius: 30%;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+.login .card .bg-title {
+  background: var(--amikom-purple);
+  border-radius: 17px 0 0 17px;
+}
+
+.login .card h1 {
+  color: var(--amikom-orange);
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.login .card p {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.login .card-body i {
+  font-size: 75px;
+}
+
+.login .card-body h2 {
+  font-weight: 700;
+  color: var(--amikom-purple);
+  margin: 0%;
+}
+
+.login .card-body p {
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.login .card-body small {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.login .form-label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.login .form-control {
+  font-weight: 600;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: var(--dark-bg);
+}
+
+.login .form-control:focus,
+.form-control.active {
+  border-color: var(--amikom-purple);
+  box-shadow: 0 0 0 0.2rem rgba(153, 102, 255, 0.5); /* Opacity turun menjadi 0.5 */
+}
+
+.login .form-control::placeholder {
+  color: var(--light-bg);
+  font-style: italic;
+}
+
+.login .btn-login {
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 45px;
+  border-radius: 10px;
+  border: 2px solid var(--amikom-purple);
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  color: white;
+  background: var(--amikom-purple);
+}
+
+.login .btn-login:hover {
+  color: var(--amikom-purple);
+  background: var(--amikom-orange);
+}
+
+.login .btn-back {
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 35px;
+  border-radius: 10px;
+  border: 2px solid var(--amikom-purple);
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  color: var(--amikom-purple);
+  background: white;
+}
+
+.login .btn-back:hover {
+  background: var(--amikom-orange);
+}
+
+@media (max-width: 1200px) {
+  .login .card .bg-title {
+    padding: 20px; /* Mengurangi padding pada bg-title */
+  }
+  
+  .login .card .bg-title img {
+    width: 60px; /* Mengurangi lebar gambar pada bg-title */
+  }
+  
+  .login .card .bg-title h1 {
+    font-size: 25px; /* Mengurangi ukuran font h1 pada bg-title */
+  }
+  
+  .login .card .bg-title p {
+    font-size: 12px; /* Mengurangi ukuran font p pada bg-title */
+  }
+}
+
+@media (max-width: 992px) {
+  .login .card .bg-title {
+    padding: 20px; /* Mengurangi padding pada bg-title */
+  }
+  
+  .login .card .bg-title img {
+    width: 60px; /* Mengurangi lebar gambar pada bg-title */
+  }
+  
+  .login .card .bg-title h1 {
+    font-size: 20px; /* Mengurangi ukuran font h1 pada bg-title */
+  }
+  
+  .login .card .bg-title p {
+    font-size: 10px; /* Mengurangi ukuran font p pada bg-title */
+  }
+}
+
+@media (max-width: 768px) {
+  .login .card .bg-title {
+    background: var(--amikom-purple);
+    border-radius: 17px 17px 0 0;
+    padding: 20px;
+  }
+  
+  .login .card .bg-title img {
+    width: 50px;
+  }
+  
+  .login .card .bg-title h1 {
+    font-size: 20px;
+  }
+  
+  .login .card .bg-title p {
+    font-size: 10px;
+  }
+}

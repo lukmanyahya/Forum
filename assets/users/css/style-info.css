@@ -1,0 +1,99 @@
+/* Info Alumni */
+.info-alumni {
+  background: white;
+  color: var(--amikom-purple);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.info-alumni hr {
+  border-top: 2px solid var(--dark-bg);
+  opacity: 100;
+}
+
+.info-alumni h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.info-alumni .card {
+  border: 2px solid var(--dark-bg);
+  border-radius: 25px; /* Radius sudut 25% */
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+/* Kegiatan */
+.info-alumni .kegiatan .card-body {
+  margin-bottom: 20px; /* Menambah jarak antara deskripsi dan tautan */
+}
+
+.info-alumni .kegiatan .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.info-alumni .kegiatan .card h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info-alumni .kegiatan .card p {
+  font-size: 14px;
+  text-align: justify;
+  display: -webkit-box; /* Display as a WebKit box */
+  -webkit-line-clamp: 4; /* Show only 4 lines */
+  -webkit-box-orient: vertical; /* Set box orientation to vertical */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis */
+}
+
+.info-alumni .kegiatan .card a {
+  color: var(--amikom-purple);
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.info-alumni .kegiatan a:hover {
+  color: var(--amikom-orange);
+}
+
+/* Lowongan */
+.info-alumni .lowongan .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.info-alumni .lowongan .card h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info-alumni .lowongan .card i {
+  margin-right: 10px;
+}
+
+.info-alumni .lowongan .card p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info-alumni .lowongan .card a {
+  color: var(--amikom-purple);
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.info-alumni .lowongan a:hover {
+  color: var(--amikom-orange);
+}
