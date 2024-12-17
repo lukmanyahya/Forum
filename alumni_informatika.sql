@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2024 at 08:46 AM
+-- Generation Time: Dec 17, 2024 at 09:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -78,38 +78,17 @@ CREATE TABLE `comments` (
   `message_id` int(11) NOT NULL,
   `nim` varchar(128) NOT NULL,
   `comment` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `image_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `message_id`, `nim`, `comment`, `created_at`) VALUES
-(1, 4, 'ADMINALUMNI1', 'uy', '2024-08-20 06:01:09'),
-(2, 5, 'ADMINALUMNI1', 'hallo', '2024-08-20 06:05:31'),
-(3, 4, 'mitra123', 'yo', '2024-08-20 06:12:01');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `forum`
---
-
-CREATE TABLE `forum` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `nim` varchar(128) NOT NULL,
-  `title` varchar(256) NOT NULL,
-  `content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `forum`
---
-
-INSERT INTO `forum` (`id`, `user_id`, `nim`, `title`, `content`) VALUES
-(1, 5, '', 'vfb', 'dbb');
+INSERT INTO `comments` (`id`, `message_id`, `nim`, `comment`, `created_at`, `image_path`) VALUES
+(21, 21, 'ADMINALUMNI1', 'uy', '2024-11-21 19:12:28', NULL),
+(28, 31, 'mitra123', 'y', '2024-12-17 01:33:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -136,19 +115,20 @@ CREATE TABLE `lanjut_studi` (
 CREATE TABLE `likes` (
   `id` int(11) NOT NULL,
   `message_id` int(11) NOT NULL,
-  `nim` varchar(128) NOT NULL
+  `nim` varchar(128) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `likes`
 --
 
-INSERT INTO `likes` (`id`, `message_id`, `nim`) VALUES
-(3, 4, '20SA1041'),
-(4, 5, '20SA1041'),
-(6, 7, '20SA1041'),
-(7, 4, 'ADMINALUMNI1'),
-(8, 4, 'mitra123');
+INSERT INTO `likes` (`id`, `message_id`, `nim`, `created_at`) VALUES
+(40, 28, '20SA1041', '2024-12-17 13:48:47'),
+(41, 29, '20SA1041', '2024-12-17 13:48:47'),
+(45, 30, 'mitra123', '2024-12-17 07:53:59'),
+(51, 32, 'mitra123', '2024-12-17 08:44:20'),
+(52, 14, 'mitra123', '2024-12-17 08:51:11');
 
 -- --------------------------------------------------------
 
@@ -163,22 +143,48 @@ CREATE TABLE `messages` (
   `edited_at` timestamp NULL DEFAULT NULL,
   `suka` int(128) NOT NULL,
   `deleted` tinyint(1) DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `image_path` varchar(255) DEFAULT NULL,
+  `file_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `messages`
 --
 
-INSERT INTO `messages` (`id`, `nim`, `message`, `edited_at`, `suka`, `deleted`, `created_at`) VALUES
-(4, '20SA1041', 'a', NULL, 2, 1, '2024-08-16 07:57:06'),
-(5, '20SA1041', 'edd', NULL, 2, 1, '2024-08-16 07:57:10'),
-(6, '20SA1041', 'aa', NULL, 0, 1, '2024-08-16 08:03:03'),
-(7, '20SA1041', 'ghvhgv', '2024-08-16 03:10:33', 0, 0, '2024-08-16 08:10:33'),
-(8, '20SA1041', 'sss', NULL, 0, 1, '2024-08-16 08:05:32'),
-(9, '20SA1041', 'fhgfftyftfytf', '2024-08-16 03:10:15', 0, 0, '2024-08-16 08:10:15'),
-(10, 'ADMINALUMNI1', 'uy', NULL, 0, 0, '2024-08-20 01:05:12'),
-(11, 'mitra123', 'hallo', NULL, 0, 0, '2024-08-20 01:12:12');
+INSERT INTO `messages` (`id`, `nim`, `message`, `edited_at`, `suka`, `deleted`, `created_at`, `image_path`, `file_path`) VALUES
+(14, 'ADMINALUMNI1', 'satpol', '2024-08-22 02:37:01', 0, 0, '2024-08-22 07:37:01', NULL, NULL),
+(20, 'ADMINALUMNI1', 'b', NULL, 0, 0, '2024-11-21 12:51:07', NULL, NULL),
+(21, 'ADMINALUMNI1', 'c', NULL, 0, 0, '2024-11-21 13:11:56', NULL, NULL),
+(23, 'ADMINALUMNI1', 'aaa', NULL, 0, 0, '2024-12-05 00:03:41', NULL, NULL),
+(28, '20SA1041', 'ssss', NULL, 0, 0, '2024-12-05 02:12:54', NULL, NULL),
+(29, '20SA1041', 'rrr', NULL, 0, 0, '2024-12-05 02:13:42', NULL, NULL),
+(30, '20SA1041', 'ddd', '2024-12-05 02:19:03', 0, 0, '2024-12-05 08:19:03', NULL, NULL),
+(31, 'mitra123', 'aaaaa', NULL, 0, 0, '2024-12-17 01:00:55', 'uploads/96a6775cde1b5471ab76982d216902bb.jpeg', NULL),
+(32, 'mitra123', 'ssss', NULL, 0, 0, '2024-12-17 01:22:46', 'uploads/94f82b624c24040dbba9d5d12281ad8f.png', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `replies`
+--
+
+CREATE TABLE `replies` (
+  `id` int(11) NOT NULL,
+  `comment_id` int(11) NOT NULL,
+  `message_id` int(11) NOT NULL,
+  `reply` text NOT NULL,
+  `nim` varchar(128) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `image_path` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `replies`
+--
+
+INSERT INTO `replies` (`id`, `comment_id`, `message_id`, `reply`, `nim`, `created_at`, `image_path`) VALUES
+(5, 21, 21, 'h', 'ADMINALUMNI1', '2024-11-21 13:12:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -324,15 +330,6 @@ ALTER TABLE `comments`
   ADD KEY `nim` (`nim`);
 
 --
--- Indexes for table `forum`
---
-ALTER TABLE `forum`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nim` (`nim`),
-  ADD UNIQUE KEY `nim_2` (`nim`),
-  ADD UNIQUE KEY `user_id` (`user_id`);
-
---
 -- Indexes for table `lanjut_studi`
 --
 ALTER TABLE `lanjut_studi`
@@ -353,6 +350,14 @@ ALTER TABLE `likes`
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_messages_users` (`nim`);
+
+--
+-- Indexes for table `replies`
+--
+ALTER TABLE `replies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comment_id` (`comment_id`),
+  ADD KEY `nim` (`nim`);
 
 --
 -- Indexes for table `tracer`
@@ -402,13 +407,7 @@ ALTER TABLE `belum_kerja`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `forum`
---
-ALTER TABLE `forum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `lanjut_studi`
@@ -420,13 +419,19 @@ ALTER TABLE `lanjut_studi`
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `replies`
+--
+ALTER TABLE `replies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tracer`
@@ -470,12 +475,6 @@ ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`nim`) REFERENCES `users` (`nim`) ON DELETE CASCADE;
 
 --
--- Constraints for table `forum`
---
-ALTER TABLE `forum`
-  ADD CONSTRAINT `forum_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
 -- Constraints for table `lanjut_studi`
 --
 ALTER TABLE `lanjut_studi`
@@ -493,6 +492,13 @@ ALTER TABLE `likes`
 --
 ALTER TABLE `messages`
   ADD CONSTRAINT `fk_messages_users` FOREIGN KEY (`nim`) REFERENCES `users` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `replies`
+--
+ALTER TABLE `replies`
+  ADD CONSTRAINT `replies_ibfk_1` FOREIGN KEY (`comment_id`) REFERENCES `comments` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `replies_ibfk_2` FOREIGN KEY (`nim`) REFERENCES `users` (`nim`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `tracer`
